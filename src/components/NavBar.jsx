@@ -24,17 +24,17 @@ const NavBar = () => {
                 </ul>
 
                 <ul className="nav right">
-                    <li className="nav-icon_search">
+                    <li className="navIcon_search">
                         <span>
                             <img src={search} alt="Search Icon" />
                         </span>
                     </li>
-                    <li className="nav-icon_menu">
+                    <li className="navIcon_menu">
                         <span>
                             <img src={menu} alt="Menu Icon" />
                         </span>
                     </li>
-                    <li className="nav-icon_toggle">
+                    <li className="navIcon_toggle">
                         <span>
                             <img src={toggle} alt="Dark Mode Toggle Icon" />
                         </span>

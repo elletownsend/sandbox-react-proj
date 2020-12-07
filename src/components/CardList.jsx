@@ -6,7 +6,7 @@ const CardList = ({ data }) => {
     const cards = data.map(data => <Card data={data} key={data.id} />);
 
     return (
-        <div className="card-list">
+        <div className="cardList">
             {cards}
         </div>
     );

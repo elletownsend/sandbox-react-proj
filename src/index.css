@@ -2,11 +2,8 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* *, *:before, *:after {
   box-sizing: border-box;
-} */
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -15,15 +12,8 @@ code {
 
 /* Wrapper for body margin */
 
-.header_wrapper {
+.header_wrapper, .cardList {
   margin: 60px 100px 0px;
   max-width: 900px;
   overflow: visible;
-}
-
-.card-list {
-  margin: 60px;
-	display: flex;
-	align-items: flex-start;
-	justify-content: center;
 }

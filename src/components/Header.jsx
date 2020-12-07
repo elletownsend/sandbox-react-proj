@@ -10,7 +10,7 @@ const Header = () => {
 
             <div className="search_wrapper">
                 <input className="search" type="text" name="search" placeholder="Search..." />
-                <button className="search-btn"><img src={search} alt="Search Icon" /></button>
+                <button className="search_btn"><img src={search} alt="Search Icon" /></button>
             </div>
         </div>
     );

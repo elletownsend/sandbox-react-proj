@@ -87,4 +87,5 @@ span {
 	line-height: 35px;
 	background-color: #e6e6e6;
 	border-radius: 5px;
+	display: inline-block;
 }

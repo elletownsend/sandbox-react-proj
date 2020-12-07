@@ -20,16 +20,16 @@ nav {
     margin: 0 20px;
 }
 
-.nav-icon_menu {
+.navIcon_menu {
     margin: 0 20px; 
 }
 
-.nav-icon_search {
+.navIcon_search {
     margin-left: 0;
     margin-right: 20px
 }
 
-.nav-icon_toggle {
+.navIcon_toggle {
     margin-right: 0;
     margin-left: 20px;
 }
