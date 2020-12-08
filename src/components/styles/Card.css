@@ -10,18 +10,23 @@
 .interests_title {
 	font-family: "Avenir";
 	font-size: 14px;
-	color: rgba(34, 34, 34, 0.5);
+	color: rgba(34, 34, 34, 0.75);
 	margin: 5px 0;
 }
 
 .card {
 	background-color: #fff;
+
 	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 	border-radius: 20px;
+
 	padding: 30px;
+	margin: 0 30px 40px 0;
+
+	width: 400px;
 	max-width: 400px;
 	min-height: 130px;
-	margin: 20px 0;
+
 	transition: all 0.5s ease;
 
 	display: flex;
@@ -82,11 +87,9 @@
 	margin-bottom: 5px;
 }
 
-.interests_item {
-	padding: 5px 15px;
-	margin-right: 5px;
-	line-height: 30px;
-	background-color: #e6e6e6;
-	border-radius: 5px;
-	display: inline-block;
+@media screen and (max-width: 600px) {
+	.card {
+		padding: 20px;
+		width: 90%;
+	}
 }

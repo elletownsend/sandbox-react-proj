@@ -2,8 +2,8 @@ import Card from './Card';
 
 import './styles/CardList.css'
 
-const CardList = ({ data }) => {
-    const cards = data.map(data => <Card data={data} key={data.id} />);
+const CardList = (props) => {
+    const cards = props.data.map(data => <Card data={data} key={data.id} viewInfo={props.viewInfo} />);
 
     return (
         <div className="cardList">
