@@ -1,29 +1,95 @@
-import './styles/Card.css'
-
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+
+const CardWrapper = styled.div`
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    
+    width: 380px;
+    min-height: 192px;
+
+    margin: 20px;
+
+    padding: 24px;
+
+    background-color: #fff;
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+	border-radius: 20px;
+
+	transition: all 0.5s ease;
+`
+
+const ImgFlagWrapper = styled.div`
+    margin-right: 8px;
+`
+
+const CardImg = styled.img`
+    width: 80px;
+	height: 80px;
+
+	object-fit: cover;
+	object-position: 50% 50%;
+
+	border-radius: 100%;
+`
+
+const FlagWrapper = styled.div`
+	width: 25px;
+	height: 25px;
+	background-color: #f2f2f2;
+	border-radius: 100%;
+	position: relative;
+	top: -30px;
+	left: 55px;
+`
+
+const Flag = styled.img`
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto auto;
+`
+
+const CardInfoWrapper = styled.div`
+    margin-left: 8px;
+`
+
+const Interests = styled.div`
+    margin-top: 8px;
+`
+
+const InterestsTitle = styled.p`
+    margin-bottom: 8px;
+`
 
 const Card = ({ data, viewInfo }) => {
     const interestsList = data.interests;
-    const interests = interestsList.map(item => <span className="interests_item" key={interestsList.indexOf(item)}>{item}</span>);
+    const interests = interestsList.map(item => <span className="tag" key={interestsList.indexOf(item)}>{item}</span>);
     return (
         <Link to={`/profile/${data.id}`} onClick={() => viewInfo(data.id)}>
-            <div className="card">
-                <div className="left">
-                    <img className="profile_img" src={data.image} alt="user profile" />
-                    <div className="flag_wrapper">
-                        <img className="flag" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/271/flag-south-korea_1f1f0-1f1f7.png" alt="South Korean Flag" />
-                    </div>
-                </div>
-                <div className="right">
-                    <h3 className="name">{data.name}</h3>
-                    <p className="title">{data.jobTitle}</p>
-                    <p className="location">{data.location}</p>
-                    <div className="interests">
-                        <p className="interests_title">Interests: </p>
+            <CardWrapper>
+                <ImgFlagWrapper>
+                    <CardImg src={data.image} alt="user profile" />
+                    <FlagWrapper>
+                        <Flag src={data.flag} alt={`${data.location} flag emoji`} />
+                    </FlagWrapper>
+                </ImgFlagWrapper>
+                <CardInfoWrapper>
+                    <h3>{data.name}</h3>
+                    <h4>{data.jobTitle}</h4>
+                    <h4>{data.location}</h4>
+                    <Interests>
+                        <InterestsTitle>Interests: </InterestsTitle>
                         {interests}
-                    </div>
-                </div>
-            </div>
+                    </Interests>
+                </CardInfoWrapper>
+            </CardWrapper>
         </Link>
     );
 }

@@ -1,14 +1,22 @@
-import Card from './Card';
+import styled from 'styled-components'
+import Card from './Card'
 
-import './styles/CardList.css'
+const List = styled.div`
+    margin: 0 110px 96px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; 
+`
 
 const CardList = (props) => {
-    const cards = props.data.map(data => <Card data={data} key={data.id} viewInfo={props.viewInfo} />);
+    const cards = props.data.slice(0).reverse().map(data => <Card data={data} key={data.id} viewInfo={props.viewInfo} />);
 
     return (
-        <div className="cardList">
+        <List>
             {cards}
-        </div>
+        </List>
     );
 }
 

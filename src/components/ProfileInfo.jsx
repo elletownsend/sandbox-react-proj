@@ -1,5 +1,4 @@
 import back from '../assets/images/back.svg'
-import './styles/ProfileInfo.css'
 
 import { Link } from 'react-router-dom'
 

@@ -1,6 +1,8 @@
 import Home from './pages/Home'
 import Profile from './pages/Profile'
 
+import GlobalStyle from './globalStyles';
+
 import { Route } from 'react-router-dom'
 
 import { useState, useEffect } from 'react'
@@ -43,24 +45,27 @@ function App() {
   };
 
   return (
-    <div className="App">
-      {
-        current == null ?
-          <Route exact path="/">
-            <Home
-              handleSubmit={handleSubmit}
-              handleChange={handleChange}
-              viewInfo={viewInfo}
-              data={content} />
-          </Route>
-          :
-          <Route path="/profile/:userId">
-            <Profile
-              data={current}
-              closeInfo={closeInfo} />
-          </Route>
-      }
-    </div>
+    <>
+      <GlobalStyle />
+      <div className="App">
+        {
+          current == null ?
+            <Route exact path="/">
+              <Home
+                handleSubmit={handleSubmit}
+                handleChange={handleChange}
+                viewInfo={viewInfo}
+                data={content} />
+            </Route>
+            :
+            <Route path="/profile/:userId">
+              <Profile
+                data={current}
+                closeInfo={closeInfo} />
+            </Route>
+        }
+      </div>
+    </>
   );
 }
 
