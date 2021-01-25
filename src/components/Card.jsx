@@ -18,7 +18,14 @@ const CardWrapper = styled.div`
 	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 	border-radius: 20px;
 
-	transition: all 0.5s ease;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        box-shadow: 8px 28px 50px rgba(39, 44, 49, 0.07),
+            1px 6px 12px rgba(39, 44, 49, 0.04);
+        transform: translate3D(0, -1px, 0) scale(1.02);
+        transition: all 0.3s ease;
+    }
 `
 
 const ImgFlagWrapper = styled.div`
