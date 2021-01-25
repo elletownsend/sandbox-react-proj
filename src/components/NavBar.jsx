@@ -30,6 +30,8 @@ const NavIcons = styled.ul`
 `
 
 const Icon = styled.li`
+    cursor: pointer;
+    
     :not(:last-child) {
         padding-right: 48px;
     }

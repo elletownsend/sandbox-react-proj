@@ -1,19 +1,9 @@
-import back from '../assets/images/back.svg'
-
-import { Link } from 'react-router-dom'
-
 export const ProfileInfo = (props) => {
     const interestsList = props.data.interests;
     const interests = interestsList.map(item => <span className="interests_item" key={interestsList.indexOf(item)}>{item}</span>);
 
     return (
         <>
-            <span className="back">
-                <Link to="/" onClick={props.closeInfo}>
-                    <img src={back} alt="back arrow" /> back
-                </Link>
-            </span>
-
             <div className="profile_wrapper">
                 <div className="profileImg_section">
                     <img className="profileImg-LG" src={props.data.image} alt="Profile" />

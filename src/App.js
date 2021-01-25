@@ -1,5 +1,6 @@
 import Home from './pages/Home'
 import Profile from './pages/Profile'
+import AddProfile from './pages/AddProfile';
 
 import GlobalStyle from './globalStyles';
 
@@ -64,6 +65,9 @@ function App() {
                 closeInfo={closeInfo} />
             </Route>
         }
+        <Route exact path="/add">
+          <AddProfile />
+        </Route>
       </div>
     </>
   );

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { useHistory } from "react-router-dom";
 
 import user from '../assets/images/user-plus.svg'
 
@@ -15,18 +16,29 @@ const AddBtn = styled.button`
     margin-bottom: 24px;
     margin-right: 156px;
 
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
+    position: fixed;
+    z-index: 99;
     bottom: 24px;
+    right: 0px;
+
+    cursor: pointer;
 
     box-shadow: 0px 0px 10px rgba(84,78,198,0.75);
 `
 
 const AddProfileBtn = () => {
+    let history = useHistory();
+
+    const handleClick = () => {
+        history.push("/add");
+    }
+
     return (
-        <AddBtn>
-            <img src={user} alt="Add Profile" />
-        </AddBtn>
+        <form onSubmit={handleClick}>
+            <AddBtn type="submit">
+                <img src={user} alt="Add Profile" />
+            </AddBtn>
+        </form>
     )
 }
 
